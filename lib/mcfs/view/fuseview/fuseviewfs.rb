@@ -78,9 +78,7 @@ module McFS; module View
         'path' => path
       }
       
-      response = YAML.load(@http.post('/api/v1/filesystems/readfile', readfile_request.to_yaml).body)
-      
-      response['data']
+      YAML.load(@http.post('/api/v1/filesystems/readfile', readfile_request.to_yaml).body)
     end
     
     def can_write?(path)
